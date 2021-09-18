@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.trans_it.hit_blow.MainFrame">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#onReset" text="リセット" />
+            <Button mnemonicParsing="false" onAction="#onClose" text="閉じる" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <right>
+      <TableView fx:id="table" prefHeight="0.0" prefWidth="195.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="counterColumn" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+          <TableColumn fx:id="numbersColumn" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" text="数字" />
+          <TableColumn fx:id="hitColumn" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="Hit" />
+            <TableColumn fx:id="blowColumn" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="Blow" />
+        </columns>
+      </TableView>
+   </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="300.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="5.0" prefHeight="50.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Spinner fx:id="firstSpinner" prefHeight="50.0" />
+                  <Spinner fx:id="secondSpinner" prefHeight="50.0" GridPane.columnIndex="1" />
+                  <Spinner fx:id="thirdSpinner" prefHeight="75.0" GridPane.columnIndex="2" />
+                  <Spinner fx:id="fourthSpinner" prefHeight="50.0" GridPane.columnIndex="3" />
+               </children>
+            </GridPane>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+              <buttons>
+                <Button fx:id="applyButton" mnemonicParsing="false" onAction="#onApply" text="決定" />
+              </buttons>
+            </ButtonBar>
+         </children>
+         <BorderPane.margin>
+            <Insets right="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
